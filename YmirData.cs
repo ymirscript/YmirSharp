@@ -7,31 +7,23 @@ namespace YmirSharp;
 /// 
 /// <typeparam name="T">The type of the config.</typeparam>
 /// </summary>
-public sealed class YmirData<T>
+public sealed class YmirData
 {
     /// <summary>
     /// The project node containing all the parsed data.
     /// </summary>
     [JsonPropertyName("project")]
-    public ProjectNode Project { get; }
+    public ProjectNode Project  { get; set; }
     
     /// <summary>
     /// The special config for the compiler.
     /// </summary>
     [JsonPropertyName("config")]
-    public T Config { get; }
+    public Dictionary<string, object> Config  { get; set; }
     
     /// <summary>
     /// The output directory where the generated files should be placed.
     /// </summary>
     [JsonPropertyName("output")]
-    public string Output { get; }
-    
-    [JsonConstructor]
-    internal YmirData(ProjectNode project, T config, string output)
-    {
-        Project = project;
-        Config = config;
-        Output = output;
-    }
+    public string Output  { get; set; }
 }

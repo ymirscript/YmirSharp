@@ -11,18 +11,11 @@ public sealed class MiddlewareNode : SyntaxNode
     /// The name of the middleware that is used.
     /// </summary>
     [JsonPropertyName("name")]
-    public string Name { get; }
+    public string Name  { get; set; }
     
     /// <summary>
     /// The options that are used in the middleware.
     /// </summary>
     [JsonPropertyName("options")]
-    public MiddlewareOptions Options { get; }
-    
-    [JsonConstructor]
-    internal MiddlewareNode(string name, MiddlewareOptions options)
-    {
-        Name = name;
-        Options = options;
-    }
+    public MiddlewareOptions Options  { get; set; }
 }

@@ -12,40 +12,30 @@ public sealed class RouteNode : SyntaxNode
     /// The path of the route.
     /// </summary>
     [JsonPropertyName("path")]
-    public PathNode Path { get; }
+    public PathNode Path  { get; set; }
     
     /// <summary>
     /// The method of the route.
     /// </summary>
     [JsonPropertyName("method")]
     [JsonConverter(typeof(MethodTypeConverter))]
-    public Method Method { get; }
+    public Method Method  { get; set; }
     
     /// <summary>
     /// Optional header validation schema defined through middleware options.
     /// </summary>
     [JsonPropertyName("header")]
-    public MiddlewareOptions? Header { get; }
+    public MiddlewareOptions? Header  { get; set; }
     
     /// <summary>
     /// Optional body validation schema defined through middleware options.
     /// </summary>
     [JsonPropertyName("body")]
-    public MiddlewareOptions? Body { get; }
+    public MiddlewareOptions? Body  { get; set; }
     
     /// <summary>
     /// The authenticator that is used for this route.
     /// </summary>
     [JsonPropertyName("authenticate")]
-    public AuthenticateClauseNode? Authenticate { get; }
-    
-    [JsonConstructor]
-    internal RouteNode(PathNode path, Method method, MiddlewareOptions? header, MiddlewareOptions? body, AuthenticateClauseNode? authenticate)
-    {
-        Path = path;
-        Method = method;
-        Header = header;
-        Body = body;
-        Authenticate = authenticate;
-    }
+    public AuthenticateClauseNode? Authenticate  { get; set; }
 }

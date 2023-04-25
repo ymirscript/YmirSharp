@@ -10,23 +10,18 @@ public sealed class PathNode : SyntaxNode
     /// <summary>
     /// The path of the path.
     /// </summary>
-    public string Path { get; }
+    [JsonPropertyName("path")]
+    public string Path  { get; set; }
     
     /// <summary>
     /// The optional alias of the path. Used when compiling to target language as reference.
     /// </summary>
-    public string? Alias { get; }
+    [JsonPropertyName("alias")]
+    public string? Alias  { get; set; }
     
     /// <summary>
     /// An array of query parameters that are used in the path.
     /// </summary>
-    public QueryParameterNode[] QueryParameters { get; }
-    
-    [JsonConstructor]
-    internal PathNode(string path, string? alias, QueryParameterNode[] queryParameters)
-    {
-        Path = path;
-        Alias = alias;
-        QueryParameters = queryParameters;
-    }
+    [JsonPropertyName("queryParameters")]
+    public QueryParameterNode[] QueryParameters  { get; set; }
 }

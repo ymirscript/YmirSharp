@@ -11,19 +11,19 @@ public class RouterNode : SyntaxNode
     /// The base path of the router.
     /// </summary>
     [JsonPropertyName("path")]
-    public PathNode Path { get; }
+    public PathNode Path  { get; set; }
     
     /// <summary>
     /// All routers that are children of this router.
     /// </summary>
     [JsonPropertyName("routers")]
-    public RouterNode[] Routers { get; }
+    public RouterNode[] Routers  { get; set; }
     
     /// <summary>
     /// All routes that are children of this router.
     /// </summary>
     [JsonPropertyName("routes")]
-    public RouteNode[] Routes { get; }
+    public RouteNode[] Routes  { get; set; }
     
     /// <summary>
     /// Optional header validation schema defined through middleware options.
@@ -33,7 +33,7 @@ public class RouterNode : SyntaxNode
     /// </remarks>
     /// </summary>
     [JsonPropertyName("header")]
-    public MiddlewareOptions? Header { get; }
+    public MiddlewareOptions? Header  { get; set; }
     
     /// <summary>
     /// Optional body validation schema defined through middleware options.
@@ -43,22 +43,11 @@ public class RouterNode : SyntaxNode
     /// </remarks>
     /// </summary>
     [JsonPropertyName("body")]
-    public MiddlewareOptions? Body { get; }
+    public MiddlewareOptions? Body  { get; set; }
     
     /// <summary>
     /// The authenticator that is used for this route.
     /// </summary>
     [JsonPropertyName("authenticate")]
-    public AuthenticateClauseNode? Authenticate { get; }
-    
-    [JsonConstructor]
-    internal RouterNode(PathNode path, RouterNode[] routers, RouteNode[] routes, MiddlewareOptions? header, MiddlewareOptions? body, AuthenticateClauseNode? authenticate)
-    {
-        Path = path;
-        Routers = routers;
-        Routes = routes;
-        Header = header;
-        Body = body;
-        Authenticate = authenticate;
-    }
+    public AuthenticateClauseNode? Authenticate  { get; set; }
 }
