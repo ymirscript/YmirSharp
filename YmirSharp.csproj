@@ -4,6 +4,14 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>YmirSharp</Title>
+        <Description>Ymir SDK to create Ymir target plugins with C#.</Description>
+        <PackageProjectUrl>https://github.com/ymirscript/YmirSharp/</PackageProjectUrl>
+        <PackageLicenseUrl>https://raw.githubusercontent.com/ymirscript/YmirSharp/main/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/ymirscript/YmirSharp.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     </PropertyGroup>
 
 </Project>
