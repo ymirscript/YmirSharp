@@ -1,6 +1,4 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
-using YmirSharp.Converters;
+﻿using System.Text.Json.Serialization;
 
 namespace YmirSharp;
 
@@ -17,9 +15,8 @@ public sealed class ProjectNode : RouterNode
     /// <summary>
     /// The authenticators that are used in the project.
     /// </summary>
-    [JsonConverter(typeof(AuthTypeConverter))]
     [JsonPropertyName("authBlocks")]
-    public Dictionary<AuthType, AuthBlockNode> AuthBlocks  { get; set; }
+    public Dictionary<string, AuthBlockNode> AuthBlocks  { get; set; }
     
     /// <summary>
     /// The middlewares that are used in this router.
