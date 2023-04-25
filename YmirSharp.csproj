@@ -12,6 +12,7 @@
         <RepositoryUrl>https://github.com/ymirscript/YmirSharp.git</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <Version>1.0.1</Version>
     </PropertyGroup>
 
 </Project>

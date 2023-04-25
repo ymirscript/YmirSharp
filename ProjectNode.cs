@@ -34,17 +34,4 @@ public sealed class ProjectNode : RouterNode
         AuthBlocks = authBlocks;
         Middlewares = middlewares;
     }
-
-    /// <summary>
-    /// Deserializes a project node from a json string.
-    /// </summary>
-    public static ProjectNode? Deserialize(string json) => JsonSerializer.Deserialize<ProjectNode>(json,
-        new JsonSerializerOptions
-        {
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            Converters =
-            {
-                new AuthTypeConverter()
-            }
-        });
 }
